@@ -1,5 +1,6 @@
+import Home from '@/views/home'
 import { lazy } from 'react'
-import { Navigate, type RouteProps } from 'react-router-dom'
+import { type RouteProps } from 'react-router-dom'
 
 export type RoutesProps = {
   path: RouteProps['path']
@@ -8,103 +9,103 @@ export type RoutesProps = {
   exact?: boolean
 }
 
-const HotelsHome = lazy(() => import('@/views/hotels/Home'))
-const HotelsChain = lazy(() => import('@/views/hotels/Chain'))
-const HotelsResort = lazy(() => import('@/views/hotels/Resort'))
-const HotelsGrid = lazy(() => import('@/views/hotels/Grid'))
-const HotelsList = lazy(() => import('@/views/hotels/List'))
-const HotelDetails = lazy(() => import('@/views/hotels/HotelDetails'))
-const RoomDetails = lazy(() => import('@/views/hotels/RoomDetails'))
-const HotelBooking = lazy(() => import('@/views/hotels/Booking'))
+const HotelsHome = lazy(() => import('@/views/legacy/hotels/Home'))
+const HotelsChain = lazy(() => import('@/views/legacy/hotels/Chain'))
+const HotelsResort = lazy(() => import('@/views/legacy/hotels/Resort'))
+const HotelsGrid = lazy(() => import('@/views/legacy/hotels/Grid'))
+const HotelsList = lazy(() => import('@/views/legacy/hotels/List'))
+const HotelDetails = lazy(() => import('@/views/legacy/hotels/HotelDetails'))
+const RoomDetails = lazy(() => import('@/views/legacy/hotels/RoomDetails'))
+const HotelBooking = lazy(() => import('@/views/legacy/hotels/Booking'))
 
-const FlightHome = lazy(() => import('@/views/flights/Home'))
-const FlightList = lazy(() => import('@/views/flights/List'))
-const FlightDetail = lazy(() => import('@/views/flights/Detail'))
-const FlightBooking = lazy(() => import('@/views/flights/Booking'))
+const FlightHome = lazy(() => import('@/views/legacy/flights/Home'))
+const FlightList = lazy(() => import('@/views/legacy/flights/List'))
+const FlightDetail = lazy(() => import('@/views/legacy/flights/Detail'))
+const FlightBooking = lazy(() => import('@/views/legacy/flights/Booking'))
 
-const TourHome = lazy(() => import('@/views/tours/Home'))
-const TourGrid = lazy(() => import('@/views/tours/Grid'))
-const TourDetail = lazy(() => import('@/views/tours/Detail'))
-const TourBooking = lazy(() => import('@/views/tours/Booking'))
+const TourHome = lazy(() => import('@/views/legacy/tours/Home'))
+const TourGrid = lazy(() => import('@/views/legacy/tours/Grid'))
+const TourDetail = lazy(() => import('@/views/legacy/tours/Detail'))
+const TourBooking = lazy(() => import('@/views/legacy/tours/Booking'))
 
-const DirectoryHome = lazy(() => import('@/views/directories/Home'))
-const DirectoryDetail = lazy(() => import('@/views/directories/Detail'))
+const DirectoryHome = lazy(() => import('@/views/legacy/directories/Home'))
+const DirectoryDetail = lazy(() => import('@/views/legacy/directories/Detail'))
 
-const CabHome = lazy(() => import('@/views/cabs/Home'))
-const CabList = lazy(() => import('@/views/cabs/List'))
-const CabDetail = lazy(() => import('@/views/cabs/Detail'))
-const CabBooking = lazy(() => import('@/views/cabs/Booking'))
+const CabHome = lazy(() => import('@/views/legacy/cabs/Home'))
+const CabList = lazy(() => import('@/views/legacy/cabs/List'))
+const CabDetail = lazy(() => import('@/views/legacy/cabs/Detail'))
+const CabBooking = lazy(() => import('@/views/legacy/cabs/Booking'))
 
-const JoinUS = lazy(() => import('@/views/listings/JoinUs'))
-const ListingsAdd = lazy(() => import('@/views/listings/AddListing'))
-const ListingsMinimal = lazy(() => import('@/views/listings/AddMinimal'))
-const ListingAdded = lazy(() => import('@/views/listings/Added'))
+const JoinUS = lazy(() => import('@/views/legacy/listings/JoinUs'))
+const ListingsAdd = lazy(() => import('@/views/legacy/listings/AddListing'))
+const ListingsMinimal = lazy(() => import('@/views/legacy/listings/AddMinimal'))
+const ListingAdded = lazy(() => import('@/views/legacy/listings/Added'))
 
-const HeroInlineForm = lazy(() => import('@/views/heroes/InlineForm'))
-const HeroMultipleSearch = lazy(() => import('@/views/heroes/MultipleSearch'))
-const HeroImageGallery = lazy(() => import('@/views/heroes/ImageGallery'))
-const HeroSplit = lazy(() => import('@/views/heroes/Split'))
+const HeroInlineForm = lazy(() => import('@/views/legacy/heroes/InlineForm'))
+const HeroMultipleSearch = lazy(() => import('@/views/legacy/heroes/MultipleSearch'))
+const HeroImageGallery = lazy(() => import('@/views/legacy/heroes/ImageGallery'))
+const HeroSplit = lazy(() => import('@/views/legacy/heroes/Split'))
 
-const AboutPage = lazy(() => import('@/views/about-us/About'))
-const OurTeamPage = lazy(() => import('@/views/about-us/OurTeam'))
+const AboutPage = lazy(() => import('@/views/legacy/about-us/About'))
+const OurTeamPage = lazy(() => import('@/views/legacy/about-us/OurTeam'))
 
-const Contact = lazy(() => import('@/views/contact-us/Contact'))
-const Contact2 = lazy(() => import('@/views/contact-us/Contact2'))
+const Contact = lazy(() => import('@/views/legacy/contact-us/Contact'))
+const Contact2 = lazy(() => import('@/views/legacy/contact-us/Contact2'))
 
-const Blog = lazy(() => import('@/views/blogs/Blog'))
-const BlogDetail = lazy(() => import('@/views/blogs/BlogDetail'))
+const Blog = lazy(() => import('@/views/legacy/blogs/Blog'))
+const BlogDetail = lazy(() => import('@/views/legacy/blogs/BlogDetail'))
 
-const BookingConfirm = lazy(() => import('@/views/listing-pages/BookingConfirm'))
-const CompareListing = lazy(() => import('@/views/listing-pages/CompareListing'))
-const OfferDetail = lazy(() => import('@/views/listing-pages/OfferDetail'))
+const BookingConfirm = lazy(() => import('@/views/legacy/listing-pages/BookingConfirm'))
+const CompareListing = lazy(() => import('@/views/legacy/listing-pages/CompareListing'))
+const OfferDetail = lazy(() => import('@/views/legacy/listing-pages/OfferDetail'))
 
-const SignIn = lazy(() => import('@/views/auth/SignIn'))
-const SignUp = lazy(() => import('@/views/auth/SignUp'))
-const ForgotPassword = lazy(() => import('@/views/auth/ForgotPassword'))
-const TwoFactorAuth = lazy(() => import('@/views/auth/TwoFactorAuth'))
+const SignIn = lazy(() => import('@/views/legacy/auth/SignIn'))
+const SignUp = lazy(() => import('@/views/legacy/auth/SignUp'))
+const ForgotPassword = lazy(() => import('@/views/legacy/auth/ForgotPassword'))
+const TwoFactorAuth = lazy(() => import('@/views/legacy/auth/TwoFactorAuth'))
 
-const HelpCenter = lazy(() => import('@/views/help/Center'))
-const HelpDetail = lazy(() => import('@/views/help/Detail'))
-const HelpPrivacyPolicy = lazy(() => import('@/views/help/PrivacyPolicy'))
-const HelpService = lazy(() => import('@/views/help/TermsOfService'))
+const HelpCenter = lazy(() => import('@/views/legacy/help/Center'))
+const HelpDetail = lazy(() => import('@/views/legacy/help/Detail'))
+const HelpPrivacyPolicy = lazy(() => import('@/views/legacy/help/PrivacyPolicy'))
+const HelpService = lazy(() => import('@/views/legacy/help/TermsOfService'))
 
-const UserProfile = lazy(() => import('@/views/user/Profile'))
-const UserTravelers = lazy(() => import('@/views/user/Travelers'))
-const UserBooking = lazy(() => import('@/views/user/Bookings'))
-const UserPaymentDetail = lazy(() => import('@/views/user/PaymentDetails'))
-const UserWishlist = lazy(() => import('@/views/user/Wishlist'))
-const UserSettings = lazy(() => import('@/views/user/Settings'))
-const UserDeleteProfile = lazy(() => import('@/views/user/DeleteProfile'))
+const UserProfile = lazy(() => import('@/views/legacy/user/Profile'))
+const UserTravelers = lazy(() => import('@/views/legacy/user/Travelers'))
+const UserBooking = lazy(() => import('@/views/legacy/user/Bookings'))
+const UserPaymentDetail = lazy(() => import('@/views/legacy/user/PaymentDetails'))
+const UserWishlist = lazy(() => import('@/views/legacy/user/Wishlist'))
+const UserSettings = lazy(() => import('@/views/legacy/user/Settings'))
+const UserDeleteProfile = lazy(() => import('@/views/legacy/user/DeleteProfile'))
 
-const AgentDashboard = lazy(() => import('@/views/agent/Dashboard'))
-const AgentListings = lazy(() => import('@/views/agent/Listings'))
-const AgentBookings = lazy(() => import('@/views/agent/Bookings'))
-const AgentActivities = lazy(() => import('@/views/agent/Activities'))
-const AgentEarnings = lazy(() => import('@/views/agent/Earnings'))
-const AgentReviews = lazy(() => import('@/views/agent/Reviews'))
-const AgentSettings = lazy(() => import('@/views/agent/Settings'))
+const AgentDashboard = lazy(() => import('@/views/legacy/agent/Dashboard'))
+const AgentListings = lazy(() => import('@/views/legacy/agent/Listings'))
+const AgentBookings = lazy(() => import('@/views/legacy/agent/Bookings'))
+const AgentActivities = lazy(() => import('@/views/legacy/agent/Activities'))
+const AgentEarnings = lazy(() => import('@/views/legacy/agent/Earnings'))
+const AgentReviews = lazy(() => import('@/views/legacy/agent/Reviews'))
+const AgentSettings = lazy(() => import('@/views/legacy/agent/Settings'))
 
-const AdminDashboard = lazy(() => import('@/views/admin/Dashboard'))
-const AdminBookingsList = lazy(() => import('@/views/admin/bookings/List'))
-const AdminBookingsDetail = lazy(() => import('@/views/admin/bookings/Detail'))
-const AdminGuestsList = lazy(() => import('@/views/admin/guests/List'))
-const AdminGuestsDetail = lazy(() => import('@/views/admin/guests/Detail'))
-const AdminAgentsList = lazy(() => import('@/views/admin/agents/List'))
-const AdminAgentsDetail = lazy(() => import('@/views/admin/agents/Detail'))
-const AdminReviews = lazy(() => import('@/views/admin/Reviews'))
-const AdminEarnings = lazy(() => import('@/views/admin/Earnings'))
-const AdminSettings = lazy(() => import('@/views/admin/Settings'))
+const AdminDashboard = lazy(() => import('@/views/legacy/admin/Dashboard'))
+const AdminBookingsList = lazy(() => import('@/views/legacy/admin/bookings/List'))
+const AdminBookingsDetail = lazy(() => import('@/views/legacy/admin/bookings/Detail'))
+const AdminGuestsList = lazy(() => import('@/views/legacy/admin/guests/List'))
+const AdminGuestsDetail = lazy(() => import('@/views/legacy/admin/guests/Detail'))
+const AdminAgentsList = lazy(() => import('@/views/legacy/admin/agents/List'))
+const AdminAgentsDetail = lazy(() => import('@/views/legacy/admin/agents/Detail'))
+const AdminReviews = lazy(() => import('@/views/legacy/admin/Reviews'))
+const AdminEarnings = lazy(() => import('@/views/legacy/admin/Earnings'))
+const AdminSettings = lazy(() => import('@/views/legacy/admin/Settings'))
 
-const Pricing = lazy(() => import('@/views/Pricing'))
-const FAQs = lazy(() => import('@/views/FAQs'))
-const NotFoundPage = lazy(() => import('@/views/NotFound'))
-const ComingSoon = lazy(() => import('@/views/ComingSoon'))
+const Pricing = lazy(() => import('@/views/legacy/Pricing'))
+const FAQs = lazy(() => import('@/views/legacy/FAQs'))
+const NotFoundPage = lazy(() => import('@/views/legacy/NotFound'))
+const ComingSoon = lazy(() => import('@/views/legacy/ComingSoon'))
 
 const hotelRoutes: RoutesProps[] = [
   {
     path: '/',
     name: 'root',
-    element: <Navigate to="/hotels/home" />,
+    element: <Home />,
   },
   {
     path: '/hotels/home',

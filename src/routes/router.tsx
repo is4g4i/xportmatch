@@ -1,6 +1,6 @@
-import { AdminLayout, AgentLayout, AuthLayout, DefaultLayout, HelpLayout, UserLayout } from '@/layouts'
+import { AdminLayout, AgentLayout, AuthLayout, DefaultLayout, HelpLayout, UserLayout } from '@/layouts/legacy'
 import { adminRoutes, agentRoutes, appRoutes, authRoutes, helpRoutes, userRoutes } from '@/routes/index'
-import { useAuthContext } from '@/states'
+import { useAuthContext } from '@/states/legacy'
 import { Navigate, Route, Routes, type RouteProps } from 'react-router-dom'
 
 const AppRouter = (props: RouteProps) => {

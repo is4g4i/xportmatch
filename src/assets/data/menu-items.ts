@@ -1,4 +1,4 @@
-import { type MenuItemType } from '@/helpers/menu'
+import { type MenuItemType } from '@/helpers/legacy/menu'
 import {
   BsBell,
   BsBookmarkHeart,

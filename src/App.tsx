@@ -1,8 +1,8 @@
-import { BackToTop } from '@/components'
+import { BackToTop } from '@/components/legacy'
 import AppRouter from '@/routes/router'
-import { AuthProvider, LayoutProvider, NotificationProvider } from '@/states'
+import { AuthProvider, LayoutProvider, NotificationProvider } from '@/states/legacy'
 import { HelmetProvider } from 'react-helmet-async'
-import configureFakeBackend from './helpers/fake-backend'
+import configureFakeBackend from './helpers/legacy/fake-backend'
 
 configureFakeBackend()
 
