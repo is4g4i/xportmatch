@@ -1,31 +1,26 @@
-import { PageMetaData } from '@/components/legacy'
-import TopNavBar from './legacy/hotels/Home/components/TopNavBar'
-import FeaturedHoliday from './legacy/hotels/Home/components/FeaturedHoliday'
-import FeaturedHotels from './legacy/hotels/Home/components/FeaturedHotels'
-import Footer from '@/layouts/legacy/AgentLayout/Footer'
-import FooterWithLinks from '@/layouts/legacy/HelpLayout/FooterWithLinks'
-import NearbyPlaces from './legacy/hotels/Home/components/NearbyPlaces'
-import About from './legacy/directories/Home/components/About'
-import Gallery from './legacy/heroes/ImageGallery/components/Gallery'
-import ActionBox from './legacy/directories/Home/components/ActionBox'
+import PageMetaData from '@/components/pageMetaData'
+import About from '@/components/about'
+import Hero from '@/components/heroHome'
+import BannerCta from '@/components/banner'
+import Footer from '@/components/footer'
+import Featured from '@/components/featured'
+import NavBar from '@/components/navbar'
+// import ItemCardRow from '@/components/itemCardRow'
 
 const Home = () => {
     return (
         <>
-            <PageMetaData title="Hotel - Home" />
-            <TopNavBar />
+            <PageMetaData title="Xportmatch | Inicio" />
+            <NavBar />
             <main>
-                <Gallery />
-                <FeaturedHoliday />
-                <FeaturedHotels />
-                <ActionBox />
-                <About />
-                <NearbyPlaces />
+                <Hero />
+                <About />   
+                <BannerCta />
+                <Featured />
+                {/* <ItemCardRow /> */}
             </main>
-            <FooterWithLinks />
             <Footer />
         </>
     )
 }
-
 export default Home

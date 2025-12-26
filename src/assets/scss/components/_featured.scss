@@ -1,0 +1,81 @@
+ .feature-item-3d {
+     align-items: flex-start;
+     padding: 1rem;
+     border-radius: 0.75rem;
+
+     transform-style: preserve-3d;
+     perspective: 900px;
+
+     transition:
+         transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+         box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+
+     will-change: transform;
+ }
+
+ .feature-item-3d:hover {
+     transform:
+         translateY(-6px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+ }
+
+ /* Imagen / icono con profundidad */
+ .feature-item-3d figure {
+     margin: 0;
+     transform: translateZ(0);
+
+     transition:
+         transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+ }
+
+ .feature-item-3d:hover figure {
+     transform: translateZ(24px) scale(1.05);
+ }
+
+ /* Texto */
+ .feature-item-3d h5 {
+     transition:
+         transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+ }
+
+ .feature-item-3d:hover h5 {
+     transform: translateZ(14px);
+ }
+
+ .feature-item-3d p {
+     transition:
+         transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+ }
+
+ .feature-item-3d:hover p {
+     transform: translateZ(8px);
+ }
+
+ @media (hover: none) {
+     .feature-item-3d:hover {
+         transform: none;
+         box-shadow: none;
+     }
+ }
+
+ /* Capa SVG flotante */
+ .feature-item-3d-layer {
+     margin: 0;
+
+     transform: translateZ(0);
+     transform-style: preserve-3d;
+     backface-visibility: hidden;
+
+     transition:
+         transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+ }
+
+ .feature-item-3d:hover .feature-item-3d-layer {
+     transform: translateZ(32px) scale(1.05);
+ }
+
+ /* SVG dentro */
+ .feature-item-3d-layer svg {
+     transform-style: preserve-3d;
+     backface-visibility: hidden;
+     will-change: transform;
+ }
