@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import bgImg20 from '@/assets/images/xportMatch/fuchibol2.jpg'
 import { PROVINCES_CR } from "@/constants/locations";
 import { SPORTS_OPTIONS } from "@/constants/sports";
-import { UnderlineCRForText, UnderlineForText } from '@/assets/svgs/svgs'
+import { UnderlineCRForText } from '@/assets/svgs/svgs'
 
 const Hero = () => {
     return (
@@ -24,7 +24,6 @@ const Hero = () => {
                             <span className="position-relative z-index-9 d-block">
                                 Xport Match
                                 <span className="position-absolute top-50 start-50 translate-middle z-index-n1 d-none d-md-block mt-4">
-                                    {/* <UnderlineForText /> */}
                                     <UnderlineCRForText />
                                 </span>
                             </span>

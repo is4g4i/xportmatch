@@ -1,3 +1,4 @@
+import Explore from '@/views/explore'
 import Home from '@/views/home'
 import { lazy } from 'react'
 import { type RouteProps } from 'react-router-dom'
@@ -100,6 +101,20 @@ const Pricing = lazy(() => import('@/views/legacy/Pricing'))
 const FAQs = lazy(() => import('@/views/legacy/FAQs'))
 const NotFoundPage = lazy(() => import('@/views/legacy/NotFound'))
 const ComingSoon = lazy(() => import('@/views/legacy/ComingSoon'))
+
+
+const XportmatchRoutes: RoutesProps[] = [
+  {
+    path: '/',
+    name: 'root',
+    element: <Home />,
+  },
+    {
+    path: '/explore',
+    name: 'explore',
+    element: <Explore />,
+  }
+]
 
 const hotelRoutes: RoutesProps[] = [
   {
@@ -536,6 +551,7 @@ const otherRoutes: RoutesProps[] = [
 ]
 
 export const appRoutes = [
+  ...XportmatchRoutes,
   ...hotelRoutes,
   ...listingRoutes,
   ...flightsRoutes,

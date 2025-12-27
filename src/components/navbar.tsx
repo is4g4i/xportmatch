@@ -1,7 +1,6 @@
-import { AppMenu } from '@/components/legacy'
+import AppMenu from '@/components/appMenu'
 import { useToggle } from '@/hooks/legacy'
-import { type LayoutState, useAuthContext, useLayoutContext } from '@/states/legacy'
-import { toSentenceCase } from '@/utils/legacy'
+import { useAuthContext } from '@/states/legacy'
 import clsx from 'clsx'
 import {
     Card,
@@ -19,68 +18,13 @@ import {
     ListGroupItem,
     Navbar,
 } from 'react-bootstrap'
-import { type IconType } from 'react-icons'
-import { BsBell, BsBookmarkCheck, BsCircleHalf, BsGear, BsHeart, BsInfoCircle, BsMoonStarsFill, BsPower, BsSunFill } from 'react-icons/bs'
+import { BsBell, BsBookmarkCheck, BsGear, BsHeart, BsInfoCircle, BsPower } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
 import { notificationData } from '@/constants/globals'
 import logoLight from '@/assets/images/logo-light.svg'
 import avatar1 from '@/assets/images/avatar/01.jpg'
-
-type ThemeModeType = {
-    theme: LayoutState['theme']
-    icon: IconType
-}
-
-const ThemeToggler = () => {
-    const { theme, updateTheme } = useLayoutContext()
-
-    const themeModes: ThemeModeType[] = [
-        {
-            icon: BsSunFill,
-            theme: 'light',
-        },
-        {
-            icon: BsMoonStarsFill,
-            theme: 'dark',
-        },
-        {
-            icon: BsCircleHalf,
-            theme: 'auto',
-        },
-    ]
-
-    return (
-        <Dropdown className="nav-item ms-3">
-            <DropdownToggle
-                className="nav-notification lh-0 btn btn-light p-0 mb-0 arrow-none"
-                type="button"
-                aria-expanded="false"
-                data-bs-toggle="dropdown"
-                data-bs-display="static"
-            >
-                <BsCircleHalf size={16} />
-            </DropdownToggle>
-            <DropdownMenu align={'end'} className="min-w-auto">
-                {(themeModes ?? []).map((mode, idx) => {
-                    const Icon = mode.icon
-                    return (
-                        <li className="mb-1" key={idx}>
-                            <DropdownItem
-                                type="button"
-                                onClick={() => updateTheme(mode.theme)}
-                                className={clsx('d-flex align-items-center', { active: theme === mode.theme })}
-                            >
-                                <Icon size={16} className="me-1" />
-                                {toSentenceCase(mode.theme)}
-                            </DropdownItem>
-                        </li>
-                    )
-                })}
-            </DropdownMenu>
-        </Dropdown>
-    )
-}
+import ThemeToggler from './themeToggler'
 
 const NavBar = () => {
     const { isOpen, toggle } = useToggle()
@@ -103,7 +47,7 @@ const NavBar = () => {
                         aria-label="Toggle navigation"
                     />
 
-                    <AppMenu showExtraPages mobileMenuOpen={isOpen} />
+                    <AppMenu mobileMenuOpen={isOpen} />
 
                     <ul className="nav flex-row align-items-center list-unstyled ms-xl-auto">
                         <Dropdown className="nav-item  ms-0 ms-md-3">

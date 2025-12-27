@@ -1,0 +1,32 @@
+/* ------------- Animación SOLO del padre Col ------------- */
+.court-filters-col {
+    transition: max-width 280ms ease, flex-basis 280ms ease, opacity 180ms ease, transform 280ms ease;
+    will-change: max-width, flex-basis, opacity, transform;
+}
+
+.court-filters-col.is-open {
+    opacity: 1;
+    transform: translateX(0);
+    max-width: 100%;
+    flex-basis: auto;
+}
+
+.court-filters-col.is-closed {
+    max-width: 0 !important;
+    flex-basis: 0 !important;
+    opacity: 0;
+    transform: translateX(-16px);
+    overflow: hidden;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* ------------- CLAVE: NO mostrar Offcanvas en desktop ------------- */
+/* Bootstrap: offcanvas-xl se “activa” como sidebar en >=1200px */
+@media (min-width: 1200px) {
+    .court-filters-col .offcanvas-xl {
+        display: none !important;
+    }
+}

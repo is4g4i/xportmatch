@@ -2,7 +2,7 @@ import { Button, Col, Container, Row } from 'react-bootstrap'
 import { BsStarFill } from 'react-icons/bs'
 
 import fuchibol4 from '@/assets/images/xportMatch/fuchibol4.png'
-import { UnderlineForText } from '@/assets/svgs/svgs'
+import { UnderlineCRForText } from '@/assets/svgs/svgs'
 
 const BannerCta = () => {
     return (
@@ -19,7 +19,7 @@ const BannerCta = () => {
                             <span className="position-relative z-index-9">
                                 mejengas
                                 <span className="position-absolute top-50 start-50 translate-middle z-index-n1 d-none d-md-block mt-3">
-                                    <UnderlineForText />
+                                    <UnderlineCRForText />
                                 </span>
                             </span>
                         </h2>

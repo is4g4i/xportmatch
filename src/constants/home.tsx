@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 import { CheckShieldSvg, MoneyBackSvg, NoBookingFeeSvg, SecurePaySvg } from "@/assets/svgs/svgs"
 import { BsFillStopwatchFill, BsLightningFill, BsShieldFillCheck } from 'react-icons/bs'
-import { FaFilter, FaWheelchair } from 'react-icons/fa6'
+import { FaFilter } from 'react-icons/fa6'
 import { type IconType } from 'react-icons'
 import fuchibol from '@/assets/images/xportMatch/fuchibol.jpg'
 

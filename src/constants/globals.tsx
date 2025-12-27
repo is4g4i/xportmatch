@@ -1,9 +1,22 @@
-type CurrencyType = | '$' | '₡'
+import { type HTMLAttributeAnchorTarget } from 'react'
+import { type IconType } from 'react-icons'
+type CurrencyType = '$' | '₡'
 
 export type NotificationType = {
     title: string
     content?: string
     time: string
+}
+
+export type MenuItemType = {
+    key: string
+    label: string
+    isTitle?: boolean
+    url?: string
+    target?: HTMLAttributeAnchorTarget
+    children?: MenuItemType[]
+    parentKey?: string
+    icon?: IconType
 }
 
 export const currency: CurrencyType = '₡'
@@ -25,4 +38,22 @@ export const notificationData: NotificationType[] = [
         title: 'Sunshine saving are here 🌞 save 30% or more on a stay',
         time: '24 Aug 2024',
     },
+]
+
+export const MENU_ITEMS: MenuItemType[] = [
+    {
+        key: 'booking',
+        label: 'Reservar',
+        url: '/explore'
+    },
+    {
+        key: 'about',
+        label: 'Nosotros',
+        url: '/about'
+    },
+    {
+        key: 'contact',
+        label: 'Contacto',
+        url: '/contact'
+    }
 ]
