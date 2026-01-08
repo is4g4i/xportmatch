@@ -1,0 +1,44 @@
+import { Currency } from '@/constants/globals'
+import { Card, CardBody, CardFooter, CardHeader, CardTitle } from 'react-bootstrap'
+
+const PriceSummary = () => {
+    return (
+        <Card className="shadow rounded-2">
+            <CardHeader className="border-bottom">
+                <CardTitle as="h5" className="mb-0">
+                    Price Summary
+                </CardTitle>
+            </CardHeader>
+            <CardBody>
+                <ul className="list-group list-group-borderless">
+                    <li className="list-group-item d-flex justify-content-between align-items-center">
+                        <span className="h6 fw-light mb-0">Room Charges</span>
+                        <span className="fs-5">{Currency}28,660</span>
+                    </li>
+                    <li className="list-group-item d-flex justify-content-between align-items-center">
+                        <span className="h6 fw-light mb-0">
+                            Total Discount<span className="badge text-bg-danger smaller mb-0 ms-2">10% off</span>
+                        </span>
+                        <span className="fs-5 text-success">-{Currency}2,560</span>
+                    </li>
+                    <li className="list-group-item d-flex justify-content-between align-items-center">
+                        <span className="h6 fw-light mb-0">Price after discount</span>
+                        <span className="fs-5">{Currency}1852</span>
+                    </li>
+                    <li className="list-group-item d-flex justify-content-between align-items-center">
+                        <span className="h6 fw-light mb-0">Taxes % Fees</span>
+                        <span className="fs-5">{Currency}350</span>
+                    </li>
+                </ul>
+            </CardBody>
+            <CardFooter className="border-top">
+                <div className="d-flex justify-content-between align-items-center">
+                    <span className="h5 mb-0">Payable Now</span>
+                    <span className="h5 mb-0">{Currency}22,500</span>
+                </div>
+            </CardFooter>
+        </Card>
+    )
+}
+
+export default PriceSummary

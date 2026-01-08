@@ -1,0 +1,177 @@
+ .feature-item-3d {
+     align-items: flex-start;
+     padding: 1rem;
+     border-radius: 0.75rem;
+
+     transform-style: preserve-3d;
+     perspective: 900px;
+
+     transition:
+         transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+         box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+
+     will-change: transform;
+ }
+
+ .feature-item-3d:hover {
+     transform:
+         translateY(-6px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+ }
+
+ /* Imagen / icono con profundidad */
+ .feature-item-3d figure {
+     margin: 0;
+     transform: translateZ(0);
+
+     transition:
+         transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+ }
+
+ .feature-item-3d:hover figure {
+     transform: translateZ(24px) scale(1.05);
+ }
+
+ /* Texto */
+ .feature-item-3d h5 {
+     transition:
+         transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+ }
+
+ .feature-item-3d:hover h5 {
+     transform: translateZ(14px);
+ }
+
+ .feature-item-3d p {
+     transition:
+         transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+ }
+
+ .feature-item-3d:hover p {
+     transform: translateZ(8px);
+ }
+
+ @media (hover: none) {
+     .feature-item-3d:hover {
+         transform: none;
+         box-shadow: none;
+     }
+ }
+
+ /* Capa SVG flotante */
+ .feature-item-3d-layer {
+     margin: 0;
+
+     transform: translateZ(0);
+     transform-style: preserve-3d;
+     backface-visibility: hidden;
+     will-change: transform;
+
+     transition:
+         transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+
+ }
+
+ .feature-item-3d:hover .feature-item-3d-layer {
+     transform: translateZ(32px) scale(1.05);
+ }
+
+ /* SVG dentro */
+ .feature-item-3d-layer svg {
+     transform-style: preserve-3d;
+     backface-visibility: hidden;
+     will-change: transform;
+     transform: translateZ(0);
+     display: block;
+ }
+
+ /* Padre con perspectiva */
+ .position-absolute {
+     perspective: 1000px;
+ }
+
+ /* Hover effect */
+ .position-absolute:hover .feature-item-3d-layer {
+     transform:
+         translateY(-6px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+ }
+
+ /* ================================
+   Court GRID card (vertical)
+================================ */
+ .court-grid-card {
+     transform-style: preserve-3d;
+     transition: transform 0.35s ease, box-shadow 0.35s ease;
+     will-change: transform;
+ }
+
+ .court-grid-card:hover {
+     transform: perspective(1000px) rotateX(3deg) rotateY(-3deg) translateY(-6px);
+     box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
+ }
+
+ /* Depth layers */
+ .court-grid-card:hover .card-body,
+ .court-grid-card:hover .card-footer {
+     transform: translateZ(24px);
+ }
+
+ /* Force CTA hover */
+ .court-grid-card:hover .btn-primary-soft {
+     background-color: var(--bs-primary);
+     color: #fff;
+ }
+
+ .court-grid-card:hover .btn-primary-soft svg {
+     transform: translateX(4px);
+ }
+
+ /* Smooth */
+ .court-grid-card .card-body,
+ .court-grid-card .card-footer,
+ .court-grid-card .btn-primary-soft,
+ .court-grid-card svg {
+     transition: all 0.25s ease;
+ }
+
+ /* ================================
+   Court ROW card (horizontal)
+================================ */
+ /* Horizontal card hover */
+ .court-row-card {
+     position: relative;
+     transition: transform 0.25s ease, box-shadow 0.25s ease;
+     will-change: transform;
+ }
+
+ /* Elevation on hover */
+ .court-row-card:hover {
+     transform: translateY(-4px);
+     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.14);
+ }
+
+ /* CTA reacts to card hover */
+ .court-row-card .btn {
+     transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+ }
+
+ /* Address soft fade */
+ .court-row-card small {
+     transition: opacity 0.2s ease;
+ }
+
+ .court-row-card:hover small {
+     opacity: 0.85;
+ }
+
+ /* Motion safety */
+ @media (prefers-reduced-motion: reduce) {
+
+     .court-row-card,
+     .court-row-card:hover {
+         transform: none !important;
+     }
+
+     .court-row-card .btn {
+         transform: none !important;
+     }
+ }

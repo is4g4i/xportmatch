@@ -5,7 +5,7 @@ import NavBar from "@/components/navbar"
 import SimpleHero from "@/components/simpleHero"
 import CourtsGrid from "@/components/courtsGrid"
 import CourtsList from "@/components/courtsList"
-import { hotels } from '@/constants/explore'
+import { courts } from '@/constants/reserve'
 import { useCourtViewStore } from '@/store/useCourtViewStore'
 
 export type ViewMode = 'grid' | 'list'
@@ -19,16 +19,16 @@ const Explore = () => {
             <NavBar />
 
             <main>
-                <SimpleHero title="Explorar Canchas" backgroundImage={bgImg5} />
+                <SimpleHero title="Reservar Canchas" backgroundImage={bgImg5} />
 
                 <div className="d-none d-xl-block">
-                    {viewMode === 'grid' && <CourtsGrid hotels={hotels} />}
-                    {viewMode === 'list' && <CourtsList hotels={hotels} />}
+                    {viewMode === 'grid' && <CourtsGrid courts={courts} />}
+                    {viewMode === 'list' && <CourtsList courts={courts} />}
                 </div>
 
                 {/* LIST — solo mobile */}
                 <div className="d-xl-none">
-                    <CourtsList hotels={hotels} />
+                    <CourtsList courts={courts} />
                 </div>
             </main>
 

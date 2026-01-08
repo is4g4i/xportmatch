@@ -19,9 +19,8 @@ import {
     Navbar,
 } from 'react-bootstrap'
 import { BsBell, BsBookmarkCheck, BsGear, BsHeart, BsInfoCircle, BsPower } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
-
-import { notificationData } from '@/constants/globals'
+import { Link, useNavigate } from 'react-router-dom'
+import { NotificationData } from '@/constants/globals'
 import logoLight from '@/assets/images/logo-light.svg'
 import avatar1 from '@/assets/images/avatar/01.jpg'
 import ThemeToggler from './themeToggler'
@@ -29,12 +28,26 @@ import ThemeToggler from './themeToggler'
 const NavBar = () => {
     const { isOpen, toggle } = useToggle()
     const { removeSession } = useAuthContext()
+
+    const navigate = useNavigate();
+
+    const goHome = (e: React.MouseEvent) => {
+        e.preventDefault();
+        navigate("/", {
+            state: { scroll: "smooth" }
+        });
+    };
+
     return (
         <header className="header-transparent">
             <Navbar expand="xl" className="navbar navbar-dark">
                 <Container>
-                    <Link className="navbar-brand" to="">
-                        <Image className="navbar-brand-item" src={logoLight} alt="logo" />
+                    <Link className="navbar-brand" to="/" onClick={goHome}>
+                        <Image
+                            className="navbar-brand-item"
+                            src={logoLight}
+                            alt="logo"
+                        />
                     </Link>
                     <button
                         onClick={toggle}
@@ -75,7 +88,7 @@ const NavBar = () => {
                                     </CardHeader>
                                     <CardBody className="p-0">
                                         <ListGroup className="list-group-flush list-unstyled p-2">
-                                            {(notificationData ?? []).map((notification, idx) => (
+                                            {(NotificationData ?? []).map((notification, idx) => (
                                                 <li key={idx}>
                                                     <ListGroupItem href="" className={clsx('list-group-item-action rounded border-0 mb-1 p-3', { 'notif-unread': idx === 0 })}>
                                                         <h6 className="mb-2">{notification.title}</h6>

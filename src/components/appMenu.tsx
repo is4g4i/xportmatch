@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import { Collapse } from 'react-bootstrap'
 import { Link, useLocation } from 'react-router-dom'
 
-import { MENU_ITEMS } from '@/constants/globals'
+import { Pages } from '@/constants/globals'
 import { type MenuItemType } from '@/helpers/legacy/menu'
 
 type AppMenuProps = {
@@ -17,7 +17,7 @@ const AppMenu = ({ mobileMenuOpen, menuClassName }: AppMenuProps) => {
     <Collapse in={mobileMenuOpen} className="navbar-collapse">
       <div>
         <ul className={clsx('navbar-nav navbar-nav-scroll me-auto', menuClassName)}>
-          {MENU_ITEMS.map((item: MenuItemType) => {
+          {Pages.map((item: MenuItemType) => {
             const isActive = pathname === item.url
 
             return (

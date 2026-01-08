@@ -1,4 +1,4 @@
-import { currency } from '@/constants/globals'
+import { Currency } from '@/constants/globals'
 import { Card, CardBody, Col, Image } from 'react-bootstrap'
 // import { FaStar } from 'react-icons/fa6'
 import { ItemCardType } from '@/constants/home'
@@ -36,7 +36,7 @@ const ItemCard = ({ itemCards }: { itemCards: ItemCardType[] }) => {
                                 </h5>
                                 <div className="hstack gap-2">
                                     <span className="h5 mb-0 text-success">
-                                        {currency}
+                                        {Currency}
                                         {item.price}
                                     </span>
                                     <small>Precio Inicial </small>

@@ -14,7 +14,7 @@ const Hero = () => {
             className="position-relative py-8 py-lg-9"
             style={{ backgroundImage: `url(${bgImg20})`, backgroundPosition: 'center left', backgroundSize: 'cover' }}
         >
-            <div className="bg-overlay bg-dark opacity-8" />
+            <div className="bg-overlay bg-dark opacity-4" />
             <Container className="z-index-9 position-relative">
                 <Row className="py-sm-5">
                     <Col xl={8} className="m-auto text-center">
@@ -80,7 +80,7 @@ const Hero = () => {
                                     </div>
                                 </Col>
                                 <Col lg={2} className="d-grid">
-                                    <Link className="btn btn-lg btn-primary mb-0" to="">
+                                    <Link className="btn btn-lg btn-primary mb-0" to="/reserve">
                                         Buscar
                                     </Link>
                                 </Col>

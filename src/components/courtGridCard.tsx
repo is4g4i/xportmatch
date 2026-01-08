@@ -1,17 +1,23 @@
 import { TinySlider } from '@/components/legacy'
-import { useToggle } from '@/hooks/legacy'
-import { currency, useLayoutContext } from '@/states/legacy'
+import { useLayoutContext } from '@/states/legacy'
 import { Card, CardBody, CardFooter } from 'react-bootstrap'
 import { renderToString } from 'react-dom/server'
-import { BsArrowLeft, BsArrowRight, BsBookmark, BsBookmarkFill, BsStarFill } from 'react-icons/bs'
+import { BsArrowLeft, BsArrowRight, BsGeoAlt } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import { type TinySliderSettings } from 'tiny-slider'
-
+import { getCourtRoute } from "@/utils/navigateToCourt";
+import { useNavigate } from "react-router-dom";
+import { type CourtType } from '@/constants/reserve'
+import { Currency } from '@/constants/globals'
+import FeatureBadge from '@/components/badge'
 import 'tiny-slider/dist/tiny-slider.css'
-import { type HotelsType } from '@/constants/explore'
 
-const CourtGridCard = ({ features, images, name, price, rating, sale }: HotelsType) => {
-  const { isOpen, toggle } = useToggle()
+const CourtGridCard = ({ court }: { court: CourtType }) => {
+  const navigate = useNavigate();
+  const goToCourt = (courtId: number) => {
+    navigate(getCourtRoute(courtId));
+  };
+  const { address, features, images, name, price, sale } = court
   const { dir } = useLayoutContext()
 
   const gridSliderSettings: TinySliderSettings = {
@@ -27,7 +33,7 @@ const CourtGridCard = ({ features, images, name, price, rating, sale }: HotelsTy
     nav: false,
   }
   return (
-    <Card className="shadow p-2 pb-0 h-100">
+    <Card className="shadow p-2 pb-0 h-100 court-grid-card">
       {sale && (
         <div className="position-absolute top-0 start-0 z-index-1 m-4">
           <div className="badge bg-danger text-white">{sale}</div>
@@ -43,42 +49,40 @@ const CourtGridCard = ({ features, images, name, price, rating, sale }: HotelsTy
         </TinySlider>
       </div>
       <CardBody className="px-3 pb-0">
-        <div className="d-flex justify-content-between mb-3 align-items-center">
-          <Link to="" className="badge bg-dark text-white items-center">
-            <BsStarFill size={13} className=" fa-fw me-2 text-warning" />
-            {rating}
-          </Link>
-          <Link to="" className="h6 mb-0 z-index-2" onClick={toggle}>
-            {!isOpen ? <BsBookmark className=" fa-fw" /> : <BsBookmarkFill color="red" className=" fa-fw" />}{' '}
-          </Link>
-        </div>
         <h5 className="card-title">
-          <Link to="/hotels/detail">{name}</Link>
+          <Link to={getCourtRoute(court.id)}>{name}</Link>
         </h5>
-        <ul className="nav nav-divider mb-2 mb-sm-3">
+        <small className="items-center">
+          <BsGeoAlt className="me-2" />
+          {address}
+        </small>
+        <div className="d-flex flex-wrap gap-2 my-3 mb-sm-3">
           {features.map((feature, idx) => (
-            <li key={idx} className="nav-item">
-              {feature}
-            </li>
+            <FeatureBadge key={idx} label={feature} />
           ))}
-        </ul>
+        </div>
+
       </CardBody>
-      <CardFooter className="pt-0">
+      <CardFooter className="pt-0 w-100">
         <div className="d-sm-flex justify-content-sm-between align-items-center">
           <div className="d-flex align-items-center">
-            <h5 className="fw-normal text-success mb-0 me-1">
-              {currency}
+            Desde {""}
+            <h5 className="fw-normal text-success mb-0 ms-1">
+              {""}
+              {Currency}
               {price}
             </h5>
-            <span className="mb-0 me-2">/day</span>
-
-            {sale && <span className="text-decoration-line-through">{currency}1000</span>}
+            <span className="mb-0 me-2">/hora</span>
           </div>
           <div className="mt-2 mt-sm-0">
-            <Link to="/hotels/detail" className="btn btn-sm btn-primary-soft mb-0 w-100 items-center">
-              View Detail
-              <BsArrowRight className=" ms-2" />
-            </Link>
+            <button
+              type="button"
+              onClick={() => goToCourt(court.id)}
+              className="btn btn-sm btn-primary-soft btn-primary-check mb-0 w-100 items-center"
+            >
+              Reservar
+              <BsArrowRight className="ms-2" />
+            </button>
           </div>
         </div>
       </CardFooter>

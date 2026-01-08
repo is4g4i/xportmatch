@@ -1,7 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap'
 
 type SimpleHeroProps = {
-    title: string
+    title?: string
     backgroundImage: string
     className?: string
 }
@@ -16,19 +16,20 @@ const SimpleHero = ({ title, backgroundImage, className }: SimpleHeroProps) => {
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'cover',
+                    minHeight: "150px"
                 }}
             >
                 {/* Overlay */}
-                <div className="bg-overlay bg-dark opacity-8 position-absolute top-0 start-0 w-100 h-100 z-1" />
+                <div className="bg-overlay bg-dark opacity-6 position-absolute top-0 start-0 w-100 h-100 z-1" />
 
                 {/* Content */}
-                <Container className="position-relative z-2">
+                {title && <Container className="position-relative z-2">
                     <Row className="my-2 my-xl-5">
                         <Col md={8} className="mx-auto text-center">
                             <h1 className="text-white">{title}</h1>
                         </Col>
                     </Row>
-                </Container>
+                </Container>}
             </div>
         </section>
     )

@@ -10,9 +10,11 @@ const Featured = () => {
             <Container>
                 <Row className="g-4 justify-content-between align-items-center">
                     <Col lg={5} className="position-relative">
-                        <figure className="position-absolute top-0 start-0 translate-middle z-index-1 ms-4">
-                            <Asterisk />
-                        </figure>
+                        <div className="position-absolute top-0 start-0 translate-middle z-index-9 ms-4 d-none d-xl-block">
+                            <figure className="feature-item-3d-layer">
+                                <Asterisk size={77} />
+                            </figure>
+                        </div>
 
                         <figure className="position-absolute bottom-0 end-0 d-none d-md-block mb-n5 me-n4">
                             <CirclesDecoration />

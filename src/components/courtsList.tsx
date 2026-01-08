@@ -1,22 +1,19 @@
 import { Col, Container, Row, Offcanvas, OffcanvasBody, OffcanvasHeader } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6'
 import useToggle from '@/hooks/useToggle'
 import CourtListRowFilter from '@/components/courtListRowFilter'
 import CourtRowCard from '@/components/courtRowCard'
 import CourtViewModeToggle from '@/components/courtViewToggle'
-import { type HotelsType } from '@/constants/explore'
+import { type CourtType } from '@/constants/reserve'
 import { BsSliders } from 'react-icons/bs'
 import { useCourtFilterSidebarStore } from '@/store/useCourtFilterSidebarStore'
 import { useEffect } from 'react'
 import { useIsMobile } from '@/hooks/useIsMobile'
 
-
-type CourtExploreGridProps = {
-    hotels: HotelsType[]
+type CourtsListProps = {
+    courts: CourtType[]
 }
 
-const CourtsList = ({ hotels }: CourtExploreGridProps) => {
+const CourtsList = ({ courts }: CourtsListProps) => {
     const { isOpen, toggle } = useToggle()
     const toggleDesktop = useCourtFilterSidebarStore((s) => s.toggle)
     const isOpenDesktop = useCourtFilterSidebarStore((s) => s.isOpen)
@@ -98,30 +95,9 @@ const CourtsList = ({ hotels }: CourtExploreGridProps) => {
                     >
 
                         <div className="vstack gap-4">
-                            {hotels.map((hotel, idx) => (
-                                <CourtRowCard key={idx} court={hotel} />
+                            {courts.map((court, idx) => (
+                                <CourtRowCard key={idx} court={court} />
                             ))}
-
-                            <nav className="d-flex justify-content-center" aria-label="navigation">
-                                <ul className="pagination pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                                    <li className="page-item mb-0">
-                                        <Link className="page-link" to="">
-                                            <FaAngleLeft />
-                                        </Link>
-                                    </li>
-                                    <li className="page-item mb-0 active">
-                                        <Link className="page-link" to="">1</Link>
-                                    </li>
-                                    <li className="page-item mb-0">
-                                        <Link className="page-link" to="">2</Link>
-                                    </li>
-                                    <li className="page-item mb-0">
-                                        <Link className="page-link" to="">
-                                            <FaAngleRight />
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </nav>
                         </div>
                     </Col>
                 </Row>

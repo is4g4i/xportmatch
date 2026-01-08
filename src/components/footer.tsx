@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import logoLight from '@/assets/images/logo-light.svg'
 import { developedByLink, currentYear } from '@/states/legacy'
-import { pages } from '@/constants/globals'
+import { Pages } from '@/constants/globals'
 
 const Footer = () => {
     return (
@@ -17,10 +17,10 @@ const Footer = () => {
                             Tu aplicacion para reserva de canchas en Costa Rica
                         </p>
                         <ul className="nav justify-content-between text-primary-hover mt-3 mt-md-0">
-                            {pages.map((page, idx) => {
+                            {Pages.map((page, idx) => {
                                 return (
                                     <li key={idx} className="nav-item">
-                                        <Link className="nav-link p-2 text-white" to={page.link}>
+                                        <Link className="nav-link p-2 text-white" to={page.url}>
                                             {page.label}
                                         </Link>
                                     </li>

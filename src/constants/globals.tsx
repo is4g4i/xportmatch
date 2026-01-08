@@ -12,23 +12,16 @@ export type MenuItemType = {
     key: string
     label: string
     isTitle?: boolean
-    url?: string
+    url: string
     target?: HTMLAttributeAnchorTarget
     children?: MenuItemType[]
     parentKey?: string
     icon?: IconType
 }
 
-export const currency: CurrencyType = '₡'
+export const Currency: CurrencyType = '₡'
 
-export const pages: { label: string, link: string }[] = [
-    { label: 'Inicio', link: '/' },
-    { label: 'Canchas', link: '/canchas' },
-    { label: 'Nosotros', link: '/nosotros' },
-    { label: 'Contacto', link: '/contacto' },
-]
-
-export const notificationData: NotificationType[] = [
+export const NotificationData: NotificationType[] = [
     {
         title: 'New! Booking flights from New York ✈️',
         content: 'Find the flexible ticket on flights around the world. Start searching today',
@@ -40,11 +33,11 @@ export const notificationData: NotificationType[] = [
     },
 ]
 
-export const MENU_ITEMS: MenuItemType[] = [
+export const Pages: MenuItemType[] = [
     {
         key: 'booking',
         label: 'Reservar',
-        url: '/explore'
+        url: '/reserve'
     },
     {
         key: 'about',

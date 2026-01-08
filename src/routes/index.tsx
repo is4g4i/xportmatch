@@ -1,5 +1,4 @@
-import Explore from '@/views/explore'
-import Home from '@/views/home'
+import Court from '@/views/court'
 import { lazy } from 'react'
 import { type RouteProps } from 'react-router-dom'
 
@@ -103,17 +102,25 @@ const NotFoundPage = lazy(() => import('@/views/legacy/NotFound'))
 const ComingSoon = lazy(() => import('@/views/legacy/ComingSoon'))
 
 
+const Home = lazy(() => import('@/views/home'))
+const Reserve = lazy(() => import('@/views/reserve'))
+
 const XportmatchRoutes: RoutesProps[] = [
   {
     path: '/',
     name: 'root',
     element: <Home />,
   },
-    {
-    path: '/explore',
-    name: 'explore',
-    element: <Explore />,
-  }
+  {
+    path: '/reserve',
+    name: 'reserve',
+    element: <Reserve />,
+  },
+  {
+    path: '/court/:id',
+    name: 'court-detail',
+    element: <Court />,
+  },
 ]
 
 const hotelRoutes: RoutesProps[] = [
