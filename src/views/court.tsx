@@ -22,7 +22,7 @@ const Court = () => {
             <NavBar />
             <main>
                 <SimpleHero backgroundImage={bgImg5} />
-                <CourtGallery id={id} />
+                <CourtGallery/>
                 <PageContentTabs />
                 {/* <AboutHotel /> */}
             </main>

@@ -62,6 +62,24 @@
 // Theme dark
 @import "dark-mode";
 
+// Theme transition animation
+html.theme-transition,
+html.theme-transition * {
+    transition:
+        background-color 200ms ease,
+        color 200ms ease,
+        border-color 200ms ease,
+        box-shadow 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html.theme-transition,
+    html.theme-transition * {
+        transition: none !important;
+    }
+}
+
 // Custom Reactjs
 @import "custom/custom-react";
 

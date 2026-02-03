@@ -1,14 +1,13 @@
 import { Col, Container, Image, Row } from 'react-bootstrap'
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
-
 import logoLight from '@/assets/images/logo-light.svg'
 import { developedByLink, currentYear } from '@/states/legacy'
 import { Pages } from '@/constants/globals'
+import SocialLinks from './socialLinks'
 
 const Footer = () => {
     return (
-        <div className="bg-dark py-7">
+        <div className="bg-dark py-7 mt-6">
             <Container>
                 <Row className="mx-auto">
                     <Col lg={6} className="mx-auto text-center">
@@ -27,28 +26,15 @@ const Footer = () => {
                                 )
                             })}
                         </ul>
-                        <ul className="list-inline mt-3 mb-0">
-                            <li className="list-inline-item mx-2">
-                                <Link className="btn btn-white btn-sm shadow px-2 text-facebook flex-centered py-2" to="">
-                                    <FaFacebookF />
-                                </Link>
-                            </li>
-                            <li className="list-inline-item mx-2">
-                                <Link className="btn btn-white btn-sm shadow px-2 text-instagram flex-centered py-2" to="">
-                                    <FaInstagram />
-                                </Link>
-                            </li>
-                            <li className="list-inline-item mx-2">
-                                <Link className="btn btn-white btn-sm shadow px-2 text-twitter flex-centered py-2" to="">
-                                    <FaTwitter />
-                                </Link>
-                            </li>
-                            <li className="list-inline-item mx-2">
-                                <Link className="btn btn-white btn-sm shadow px-2 text-linkedin flex-centered py-2" to="">
-                                    <FaLinkedinIn />
-                                </Link>
-                            </li>
-                        </ul>
+                        <SocialLinks
+                            variant="light"
+                            platforms={[
+                                { key: "facebook", url: "https://facebook.com/xportmatch" },
+                                { key: "instagram", url: "https://instagram.com/xportmatch" },
+                                { key: "twitter", url: "https://twitter.com/xportmatch" },
+                                { key: "linkedin", url: "https://linkedin.com/company/xportmatch" }
+                            ]}
+                        />
                         <div className="text-body-secondary text-primary-hover mt-3">
                             {' '}
                             Copyrights ©{currentYear} XportMatch. Desarrollado por{' '}

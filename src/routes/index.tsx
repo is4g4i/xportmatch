@@ -1,4 +1,4 @@
-import Court from '@/views/court'
+
 import { lazy } from 'react'
 import { type RouteProps } from 'react-router-dom'
 
@@ -104,6 +104,8 @@ const ComingSoon = lazy(() => import('@/views/legacy/ComingSoon'))
 
 const Home = lazy(() => import('@/views/home'))
 const Reserve = lazy(() => import('@/views/reserve'))
+const Court = lazy(() => import('@/views/court'))
+const Complex = lazy(() => import('@/views/complex'))
 
 const XportmatchRoutes: RoutesProps[] = [
   {
@@ -120,6 +122,11 @@ const XportmatchRoutes: RoutesProps[] = [
     path: '/court/:id',
     name: 'court-detail',
     element: <Court />,
+  },
+  {
+    path: '/complex/:id',
+    name: 'complex-detail',
+    element: <Complex />,
   },
 ]
 

@@ -12,6 +12,8 @@ import FeatureBadge from './badge'
 import { getCourtRoute } from '@/utils/navigateToCourt'
 import ShareDropdown from './shareDropdown'
 import { Currency } from '@/constants/globals'
+import ActionButton from './actionButton'
+import { getShareableUrl } from '@/utils/getCurrentUrl'
 
 const CourtRowCard = ({ court }: { court: CourtType }) => {
     const { address, features, images, name, price, sale, schemes } = court
@@ -59,7 +61,7 @@ const CourtRowCard = ({ court }: { court: CourtType }) => {
                     <CardBody className="py-md-2 d-flex flex-column h-100 position-relative">
                         <div className="d-flex justify-content-end align-items-center">
                             <ul className="list-inline mb-0 z-index-2 d-flex justify-content-end">
-                                <ShareDropdown url={`${window.location.origin}${getCourtRoute(court.id)}`} />
+                                <ShareDropdown url={getShareableUrl()} />
                             </ul>
                         </div>
                         <h5 className="card-title">
@@ -106,14 +108,15 @@ const CourtRowCard = ({ court }: { court: CourtType }) => {
                                 <span className="mb-0 me-2">/hora</span>
                             </div>
                             <div className="mt-3 mt-sm-0">
-                                <button
-                                    type="button"
+                                <ActionButton
                                     onClick={() => goToCourt(court.id)}
-                                    className="btn btn-sm btn-primary-soft btn-primary-check mb-0 w-100 items-center"
+                                    variant="primary-soft"
+                                    size="sm"
+                                    fullWidth
+                                    icon={<BsArrowRight />}
                                 >
                                     Reservar
-                                    <BsArrowRight className="ms-2" />
-                                </button>
+                                </ActionButton>
                             </div>
                         </div>
                     </CardBody>

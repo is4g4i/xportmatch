@@ -1,15 +1,11 @@
 import { Col, Container, Row } from 'react-bootstrap'
 import { BsEyeFill, BsGeoAlt } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
-import { getCourtRoute } from '@/utils/navigateToCourt'
 import ShareDropdown from './shareDropdown'
 import GalleryMosaic from './galleryMosaic'
+import { getShareableUrl } from '@/utils/getCurrentUrl'
 
-interface CourtGalleryProps {
-    id: string;
-}
-
-const CourtGallery = ({ id }: CourtGalleryProps) => {
+const CourtGallery = () => {
 
     return (
         <>
@@ -18,7 +14,7 @@ const CourtGallery = ({ id }: CourtGalleryProps) => {
                     <Row>
                         <Col md={12} className="d-flex justify-content-between align-items-center">
                             <h1 className="fs-2 mb-0">Cancha Deportiva</h1>
-                            <ShareDropdown url={`${window.location.origin}${getCourtRoute(id)}`} />
+                            <ShareDropdown url={getShareableUrl()} />
                         </Col>
                     </Row>
                     <Row>

@@ -11,6 +11,7 @@ import { type CourtType } from '@/constants/reserve'
 import { Currency } from '@/constants/globals'
 import FeatureBadge from '@/components/badge'
 import 'tiny-slider/dist/tiny-slider.css'
+import ActionButton from './actionButton'
 
 const CourtGridCard = ({ court }: { court: CourtType }) => {
   const navigate = useNavigate();
@@ -75,14 +76,16 @@ const CourtGridCard = ({ court }: { court: CourtType }) => {
             <span className="mb-0 me-2">/hora</span>
           </div>
           <div className="mt-2 mt-sm-0">
-            <button
-              type="button"
+            <ActionButton
               onClick={() => goToCourt(court.id)}
-              className="btn btn-sm btn-primary-soft btn-primary-check mb-0 w-100 items-center"
+              variant="primary-soft"
+              size="sm"
+              fullWidth
+              icon={<BsArrowRight />}
             >
               Reservar
-              <BsArrowRight className="ms-2" />
-            </button>
+            </ActionButton>
+
           </div>
         </div>
       </CardFooter>

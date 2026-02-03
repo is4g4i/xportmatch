@@ -1,12 +1,7 @@
 import AppMenu from '@/components/appMenu'
 import { useToggle } from '@/hooks/legacy'
 import { useAuthContext } from '@/states/legacy'
-import clsx from 'clsx'
 import {
-    Card,
-    CardBody,
-    CardFooter,
-    CardHeader,
     Container,
     Dropdown,
     DropdownDivider,
@@ -14,13 +9,10 @@ import {
     DropdownMenu,
     DropdownToggle,
     Image,
-    ListGroup,
-    ListGroupItem,
     Navbar,
 } from 'react-bootstrap'
-import { BsBell, BsBookmarkCheck, BsGear, BsHeart, BsInfoCircle, BsPower } from 'react-icons/bs'
+import { BsBookmarkCheck, BsGear, BsHeart, BsInfoCircle, BsPower } from 'react-icons/bs'
 import { Link, useNavigate } from 'react-router-dom'
-import { NotificationData } from '@/constants/globals'
 import logoLight from '@/assets/images/logo-light.svg'
 import avatar1 from '@/assets/images/avatar/01.jpg'
 import ThemeToggler from './themeToggler'
@@ -63,7 +55,7 @@ const NavBar = () => {
                     <AppMenu mobileMenuOpen={isOpen} />
 
                     <ul className="nav flex-row align-items-center list-unstyled ms-xl-auto">
-                        <Dropdown className="nav-item  ms-0 ms-md-3">
+                        {/* <Dropdown className="nav-item  ms-0 ms-md-3">
                             <DropdownToggle
                                 as={Link}
                                 to=""
@@ -106,7 +98,7 @@ const NavBar = () => {
                                     </CardFooter>
                                 </Card>
                             </DropdownMenu>
-                        </Dropdown>
+                        </Dropdown> */}
                         <ThemeToggler />
                         <Dropdown className="nav-item ms-3">
                             <DropdownToggle as={Link} to="" className="arrow-none avatar avatar-sm p-0">
